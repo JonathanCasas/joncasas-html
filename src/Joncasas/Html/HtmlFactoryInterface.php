@@ -6,7 +6,7 @@ namespace Joncasas\Html;
  *
  * @author jonathan
  */
-interface InterfaceHtmlFactory {
+interface HtmlFactoryInterface {
 
     /**
      * @param bool $inline
@@ -18,7 +18,7 @@ interface InterfaceHtmlFactory {
      * @param array $cssClass
      * @param array $options
      * 
-     * @return ObjectHtml
+     * @return AbstractObjectHtml
      */
-    public function createObjectForm(bool $inline,string $type, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): ObjectHtml;
+    public function createObjectForm(bool $inline,string $type, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): AbstractObjectHtml;
 }

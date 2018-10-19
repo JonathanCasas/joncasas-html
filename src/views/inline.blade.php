@@ -11,7 +11,7 @@
             $class = implode(' ', $cssClass);
         }
         ?>
-        @if(Joncasas\Html\ObjectHtml::TEXT==$type||Joncasas\Html\ObjectHtml::FILE==$type||Joncasas\Html\ObjectHtml::NUMBER==$type||Joncasas\Html\ObjectHtml::EMAIL==$type||Joncasas\Html\ObjectHtml::CHECKBOX==$type)
+        @if(Joncasas\Html\AbstractObjectHtml::TEXT==$type||Joncasas\Html\AbstractObjectHtml::FILE==$type||Joncasas\Html\AbstractObjectHtml::NUMBER==$type||Joncasas\Html\AbstractObjectHtml::EMAIL==$type||Joncasas\Html\AbstractObjectHtml::CHECKBOX==$type)
             @include('HTML::default')
         @else
             @include(sprintf('HTML::%s',$type))

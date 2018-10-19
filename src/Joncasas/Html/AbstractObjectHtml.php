@@ -10,7 +10,7 @@ use function view;
  *
  * @author jonathan
  */
-abstract class ObjectHtml {
+abstract class AbstractObjectHtml {
 
     /**
      * @var bool

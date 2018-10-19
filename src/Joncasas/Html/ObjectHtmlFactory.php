@@ -19,7 +19,7 @@ use Joncasas\Html\Inputs\TextArea;
  *
  * @author jonathan
  */
-class ObjectHtmlFactory implements InterfaceHtmlFactory {
+class ObjectHtmlFactory implements HtmlFactoryInterface {
 
     /**
      * @var ObjectHtmlFactory
@@ -36,18 +36,18 @@ class ObjectHtmlFactory implements InterfaceHtmlFactory {
      * @param array $cssClass
      * @param array $options
      *
-     * @return ObjectHtml
+     * @return AbstractObjectHtml
      */
-    public function createObjectForm(bool $inline, string $type, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): ObjectHtml {
-        if ($type == ObjectHtml::TEXT || $type == ObjectHtml::NUMBER || $type == ObjectHtml::FILE || $type == ObjectHtml::EMAIL || $type == ObjectHtml::PASSWORD || $type == ObjectHtml::CHECKBOX) {
+    public function createObjectForm(bool $inline, string $type, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): AbstractObjectHtml {
+        if ($type == AbstractObjectHtml::TEXT || $type == AbstractObjectHtml::NUMBER || $type == AbstractObjectHtml::FILE || $type == AbstractObjectHtml::EMAIL || $type == AbstractObjectHtml::PASSWORD || $type == AbstractObjectHtml::CHECKBOX) {
             return new DefaultInput($inline, $type, $name, $label, $value, $id, $cssClass, $options);
-        } else if ($type == ObjectHtml::TEXTAREA) {
+        } else if ($type == AbstractObjectHtml::TEXTAREA) {
             return new TextArea($inline, $name, $label, $value, $id, $cssClass, $options);
-        } else if ($type == ObjectHtml::SELECT) {
+        } else if ($type == AbstractObjectHtml::SELECT) {
             return new Select($inline, $name, $label, $value, $id, $cssClass, $options);
-        } else if ($type == ObjectHtml::RADIO) {
+        } else if ($type == AbstractObjectHtml::RADIO) {
             return new Radio($inline, $name, $label, $value, $id, $cssClass, $options);
-        }else if($type== ObjectHtml::SELECT2){
+        } else if ($type == AbstractObjectHtml::SELECT2) {
             return new Select2($inline, $name, $label, $value, $id, $cssClass, $options);
         }
     }
@@ -71,10 +71,10 @@ class ObjectHtmlFactory implements InterfaceHtmlFactory {
      * @param array $cssClass
      * @param array $options
      *
-     * @return ObjectHtml
+     * @return AbstractObjectHtml
      */
-    public function text(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): ObjectHtml {
-        return $this->createObjectForm($inline, ObjectHtml::TEXT, $name, $label, $value, $id, $cssClass, $options);
+    public function text(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): AbstractObjectHtml {
+        return $this->createObjectForm($inline, AbstractObjectHtml::TEXT, $name, $label, $value, $id, $cssClass, $options);
     }
 
     /**
@@ -86,10 +86,10 @@ class ObjectHtmlFactory implements InterfaceHtmlFactory {
      * @param array $cssClass
      * @param array $options
      *
-     * @return ObjectHtml
+     * @return AbstractObjectHtml
      */
-    public function number(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): ObjectHtml {
-        return $this->createObjectForm($inline, ObjectHtml::NUMBER, $name, $label, $value, $id, $cssClass, $options);
+    public function number(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): AbstractObjectHtml {
+        return $this->createObjectForm($inline, AbstractObjectHtml::NUMBER, $name, $label, $value, $id, $cssClass, $options);
     }
 
     /**
@@ -101,10 +101,10 @@ class ObjectHtmlFactory implements InterfaceHtmlFactory {
      * @param array $cssClass
      * @param array $options
      *
-     * @return ObjectHtml
+     * @return AbstractObjectHtml
      */
-    public function file(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): ObjectHtml {
-        return $this->createObjectForm($inline, ObjectHtml::FILE, $name, $label, $value, $id, $cssClass, $options);
+    public function file(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): AbstractObjectHtml {
+        return $this->createObjectForm($inline, AbstractObjectHtml::FILE, $name, $label, $value, $id, $cssClass, $options);
     }
 
     /**
@@ -116,10 +116,10 @@ class ObjectHtmlFactory implements InterfaceHtmlFactory {
      * @param array $cssClass
      * @param array $options
      *
-     * @return ObjectHtml
+     * @return AbstractObjectHtml
      */
-    public function email(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): ObjectHtml {
-        return $this->createObjectForm($inline, ObjectHtml::EMAIL, $name, $label, $value, $id, $cssClass, $options);
+    public function email(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): AbstractObjectHtml {
+        return $this->createObjectForm($inline, AbstractObjectHtml::EMAIL, $name, $label, $value, $id, $cssClass, $options);
     }
 
     /**
@@ -131,10 +131,10 @@ class ObjectHtmlFactory implements InterfaceHtmlFactory {
      * @param array $cssClass
      * @param array $options
      *
-     * @return ObjectHtml
+     * @return AbstractObjectHtml
      */
-    public function password(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): ObjectHtml {
-        return $this->createObjectForm($inline, ObjectHtml::PASSWORD, $name, $label, $value, $id, $cssClass, $options);
+    public function password(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): AbstractObjectHtml {
+        return $this->createObjectForm($inline, AbstractObjectHtml::PASSWORD, $name, $label, $value, $id, $cssClass, $options);
     }
 
     /**
@@ -146,10 +146,10 @@ class ObjectHtmlFactory implements InterfaceHtmlFactory {
      * @param array $cssClass
      * @param array $options
      *
-     * @return ObjectHtml
+     * @return AbstractObjectHtml
      */
-    public function checkbox(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): ObjectHtml {
-        return $this->createObjectForm($inline, ObjectHtml::CHECKBOX, $name, $label, $value, $id, $cssClass, $options);
+    public function checkbox(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): AbstractObjectHtml {
+        return $this->createObjectForm($inline, AbstractObjectHtml::CHECKBOX, $name, $label, $value, $id, $cssClass, $options);
     }
 
     /**
@@ -161,10 +161,10 @@ class ObjectHtmlFactory implements InterfaceHtmlFactory {
      * @param array $cssClass
      * @param array $options
      *
-     * @return ObjectHtml
+     * @return AbstractObjectHtml
      */
-    public function textarea(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): ObjectHtml {
-        return $this->createObjectForm($inline, ObjectHtml::TEXTAREA, $name, $label, $value, $id, $cssClass, $options);
+    public function textarea(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): AbstractObjectHtml {
+        return $this->createObjectForm($inline, AbstractObjectHtml::TEXTAREA, $name, $label, $value, $id, $cssClass, $options);
     }
 
     /**
@@ -176,10 +176,10 @@ class ObjectHtmlFactory implements InterfaceHtmlFactory {
      * @param array $cssClass
      * @param array $options
      *
-     * @return ObjectHtml
+     * @return AbstractObjectHtml
      */
-    public function select(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): ObjectHtml {
-        return $this->createObjectForm($inline, ObjectHtml::SELECT, $name, $label, $value, $id, $cssClass, $options);
+    public function select(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): AbstractObjectHtml {
+        return $this->createObjectForm($inline, AbstractObjectHtml::SELECT, $name, $label, $value, $id, $cssClass, $options);
     }
 
     /**
@@ -191,10 +191,10 @@ class ObjectHtmlFactory implements InterfaceHtmlFactory {
      * @param array $cssClass
      * @param array $options
      *
-     * @return ObjectHtml
+     * @return AbstractObjectHtml
      */
-    public function radio(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): ObjectHtml {
-        return $this->createObjectForm($inline, ObjectHtml::RADIO, $name, $label, $value, $id, $cssClass, $options);
+    public function radio(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): AbstractObjectHtml {
+        return $this->createObjectForm($inline, AbstractObjectHtml::RADIO, $name, $label, $value, $id, $cssClass, $options);
     }
 
     /**
@@ -206,10 +206,10 @@ class ObjectHtmlFactory implements InterfaceHtmlFactory {
      * @param array $cssClass
      * @param array $options
      *
-     * @return ObjectHtml
+     * @return AbstractObjectHtml
      */
-    public function select2(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): ObjectHtml {
-        return $this->createObjectForm($inline, ObjectHtml::SELECT2, $name, $label, $value, $id, $cssClass, $options);
+    public function select2(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): AbstractObjectHtml {
+        return $this->createObjectForm($inline, AbstractObjectHtml::SELECT2, $name, $label, $value, $id, $cssClass, $options);
     }
 
 }

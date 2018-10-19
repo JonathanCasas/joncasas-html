@@ -2,14 +2,14 @@
 
 namespace Joncasas\Html\Inputs;
 
-use Joncasas\Html\ObjectHtml;
+use Joncasas\Html\AbstractObjectHtml;
 
 /**
  * Description of Radio
  *
  * @author jonathan
  */
-class Radio extends ObjectHtml {
+class Radio extends AbstractObjectHtml {
 
     /**
      * @param bool $inline
@@ -22,7 +22,7 @@ class Radio extends ObjectHtml {
      * 
      */
     public function __construct(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = array(), array $options = array()) {
-        parent::__construct($inline, ObjectHtml::RADIO, $name, $label, $value, $id, $cssClass, $options);
+        parent::__construct($inline, AbstractObjectHtml::RADIO, $name, $label, $value, $id, $cssClass, $options);
     }
 
 }

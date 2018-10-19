@@ -8,14 +8,14 @@
 
 namespace Joncasas\Html\Inputs;
 
-use Joncasas\Html\ObjectHtml;
+use Joncasas\Html\AbstractObjectHtml;
 
 /**
  * Description of TextArea
  *
  * @author jonathan
  */
-class TextArea extends ObjectHtml {
+class TextArea extends AbstractObjectHtml {
 
     /**
      * @param bool $inline
@@ -28,7 +28,7 @@ class TextArea extends ObjectHtml {
      * 
      */
     public function __construct(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = array(), array $options = array()) {
-        parent::__construct($inline, ObjectHtml::TEXTAREA, $name, $label, $value, $id, $cssClass, $options);
+        parent::__construct($inline, AbstractObjectHtml::TEXTAREA, $name, $label, $value, $id, $cssClass, $options);
     }
 
 }

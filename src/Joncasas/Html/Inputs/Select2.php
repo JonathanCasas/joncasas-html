@@ -2,14 +2,14 @@
 
 namespace Joncasas\Html\Inputs;
 
-use Joncasas\Html\ObjectHtml;
+use Joncasas\Html\AbstractObjectHtml;
 
 /**
  * Description of Select2
  *
  * @author jonathan
  */
-class Select2 extends ObjectHtml {
+class Select2 extends AbstractObjectHtml {
 
     /**
      * @param bool $inline
@@ -22,7 +22,7 @@ class Select2 extends ObjectHtml {
      * 
      */
     public function __construct(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = array(), array $options = array()) {
-        parent::__construct($inline, ObjectHtml::SELECT2, $name, $label, $value, $id, $cssClass, $options);
+        parent::__construct($inline, AbstractObjectHtml::SELECT2, $name, $label, $value, $id, $cssClass, $options);
     }
 
 }
