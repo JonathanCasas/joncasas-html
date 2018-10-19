@@ -2,6 +2,7 @@
     "name": "joncasas/html",
     "description": "Html helper class",
     "license": "MIT",
+    "keywords": ["helper html", "laravel","laravel html"],
     "authors": [
         {
             "name": "Jonathan Casas",
@@ -10,8 +11,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": "^7.1.3",
-        "laravel/framework":"^5.4.*"
+        "php": "^7.1.3"
     },
     "require-dev": {
         "phpunit/phpunit": "~5.0"
