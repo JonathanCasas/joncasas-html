@@ -1,8 +1,7 @@
 {
     "name": "joncasas/html",
     "description": "Html helper class",
-    "type": "project",
-    "license": "GPL-3.0",
+    "license": "MIT",
     "authors": [
         {
             "name": "Jonathan Casas",
