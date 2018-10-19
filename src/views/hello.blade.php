@@ -15,6 +15,6 @@
         {!! $html->radio(false,'test3','Pruebas de aplicacion 3')->setOptions(array('hola'=>'Mundo','bebe'=>'como')) !!}
     </div>
     <div class="col-md-6">
-        {!! $html->select2(false,'test3','Pruebas de aplicacion 3')->setOptions(array('hola'=>'Mundo'))->setPlaceholder('seleccione')->setRequired(true) !!}
+        {!! $html->select2(false,'test3','Pruebas de aplicacion 3')->setOptions(array('hola'=>'Mundo'))->setPlaceholder('seleccione')->setRequired(true)->setMultiple(true) !!}
     </div>
 </div>
