@@ -26,7 +26,7 @@ class ViewServiceProvider extends ServiceProvider {
      * @return void
      */
     public function register() {
-        $html = 'html_var';
+        $html = ObjectHtmlFactory::getInstance();
         view()->share('html', $html);
     }
 
