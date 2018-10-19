@@ -1,4 +1,4 @@
-<select class="form-control {{ $class }}" id="{{ $id }}" name="{{ $name }}"
+<select class="form-control {{ $class }}" id="{{ $id }}" name="{{ $name }}{{ $multiple?'[]':'' }}"
         @if($required) required @endif 
         @if($multiple) multiple @endif>
         <option value="">{{ $placeholder }}</option>

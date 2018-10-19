@@ -22,7 +22,7 @@ class Select2 extends ObjectHtml {
      * 
      */
     public function __construct(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = array(), array $options = array()) {
-        parent::__construct($inline, ObjectHtml::SELECT, $name, $label, $value, $id, $cssClass, $options);
+        parent::__construct($inline, ObjectHtml::SELECT2, $name, $label, $value, $id, $cssClass, $options);
     }
 
 }
