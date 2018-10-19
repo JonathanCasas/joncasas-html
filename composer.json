@@ -2,7 +2,7 @@
     "name": "joncasas/html",
     "description": "Html helper class",
     "type": "project",
-    "license": "GPL",
+    "license": "GPL-3.0",
     "authors": [
         {
             "name": "Jonathan Casas",
