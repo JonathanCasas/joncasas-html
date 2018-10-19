@@ -37,6 +37,8 @@ class ObjectHtmlFactory implements InterfaceHtmlFactory {
     public function createObjectForm(bool $inline, string $type, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): ObjectHtml {
         if ($type == ObjectHtml::TEXT || $type == ObjectHtml::NUMBER || $type == ObjectHtml::FILE || $type == ObjectHtml::EMAIL || $type == ObjectHtml::PASSWORD || $type == ObjectHtml::CHECKBOX) {
             return new DefaultInput($inline, $type, $name, $label, $value, $id, $cssClass, $options);
+        }else if($type== ObjectHtml::TEXTAREA){
+            return new Inputs\TextArea($inline, $name, $label, $value, $id, $cssClass, $options);
         }
     }
 
@@ -138,6 +140,21 @@ class ObjectHtmlFactory implements InterfaceHtmlFactory {
      */
     public function checkbox(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): ObjectHtml {
         return $this->createObjectForm($inline, ObjectHtml::CHECKBOX, $name, $label, $value, $id, $cssClass, $options);
+    }
+    
+    /**
+     * @param bool $inline
+     * @param string $name
+     * @param string $label
+     * @param mixed $value
+     * @param string $id
+     * @param array $cssClass
+     * @param array $options
+     *
+     * @return ObjectHtml
+     */
+    public function textarea(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): ObjectHtml {
+        return $this->createObjectForm($inline, ObjectHtml::TEXTAREA, $name, $label, $value, $id, $cssClass, $options);
     }
 
 }
