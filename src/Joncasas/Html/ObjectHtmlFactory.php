@@ -9,6 +9,10 @@
 namespace Joncasas\Html;
 
 use Joncasas\Html\Inputs\DefaultInput;
+use Joncasas\Html\Inputs\Radio;
+use Joncasas\Html\Inputs\Select;
+use Joncasas\Html\Inputs\Select2;
+use Joncasas\Html\Inputs\TextArea;
 
 /**
  * Description of ObjectHtmlFactory
@@ -37,8 +41,14 @@ class ObjectHtmlFactory implements InterfaceHtmlFactory {
     public function createObjectForm(bool $inline, string $type, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): ObjectHtml {
         if ($type == ObjectHtml::TEXT || $type == ObjectHtml::NUMBER || $type == ObjectHtml::FILE || $type == ObjectHtml::EMAIL || $type == ObjectHtml::PASSWORD || $type == ObjectHtml::CHECKBOX) {
             return new DefaultInput($inline, $type, $name, $label, $value, $id, $cssClass, $options);
-        }else if($type== ObjectHtml::TEXTAREA){
-            return new Inputs\TextArea($inline, $name, $label, $value, $id, $cssClass, $options);
+        } else if ($type == ObjectHtml::TEXTAREA) {
+            return new TextArea($inline, $name, $label, $value, $id, $cssClass, $options);
+        } else if ($type == ObjectHtml::SELECT) {
+            return new Select($inline, $name, $label, $value, $id, $cssClass, $options);
+        } else if ($type == ObjectHtml::RADIO) {
+            return new Radio($inline, $name, $label, $value, $id, $cssClass, $options);
+        }else if($type== ObjectHtml::SELECT2){
+            return new Select2($inline, $name, $label, $value, $id, $cssClass, $options);
         }
     }
 
@@ -141,7 +151,7 @@ class ObjectHtmlFactory implements InterfaceHtmlFactory {
     public function checkbox(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): ObjectHtml {
         return $this->createObjectForm($inline, ObjectHtml::CHECKBOX, $name, $label, $value, $id, $cssClass, $options);
     }
-    
+
     /**
      * @param bool $inline
      * @param string $name
@@ -155,6 +165,51 @@ class ObjectHtmlFactory implements InterfaceHtmlFactory {
      */
     public function textarea(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): ObjectHtml {
         return $this->createObjectForm($inline, ObjectHtml::TEXTAREA, $name, $label, $value, $id, $cssClass, $options);
+    }
+
+    /**
+     * @param bool $inline
+     * @param string $name
+     * @param string $label
+     * @param mixed $value
+     * @param string $id
+     * @param array $cssClass
+     * @param array $options
+     *
+     * @return ObjectHtml
+     */
+    public function select(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): ObjectHtml {
+        return $this->createObjectForm($inline, ObjectHtml::SELECT, $name, $label, $value, $id, $cssClass, $options);
+    }
+
+    /**
+     * @param bool $inline
+     * @param string $name
+     * @param string $label
+     * @param mixed $value
+     * @param string $id
+     * @param array $cssClass
+     * @param array $options
+     *
+     * @return ObjectHtml
+     */
+    public function radio(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): ObjectHtml {
+        return $this->createObjectForm($inline, ObjectHtml::RADIO, $name, $label, $value, $id, $cssClass, $options);
+    }
+
+    /**
+     * @param bool $inline
+     * @param string $name
+     * @param string $label
+     * @param mixed $value
+     * @param string $id
+     * @param array $cssClass
+     * @param array $options
+     *
+     * @return ObjectHtml
+     */
+    public function select2(bool $inline, string $name, string $label, $value = null, string $id = null, array $cssClass = [], array $options = []): ObjectHtml {
+        return $this->createObjectForm($inline, ObjectHtml::SELECT2, $name, $label, $value, $id, $cssClass, $options);
     }
 
 }

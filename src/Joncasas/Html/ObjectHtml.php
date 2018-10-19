@@ -61,10 +61,16 @@ abstract class ObjectHtml {
      * @var string
      */
     const SELECT2 = 'select2';
+
     /**
      * @var string
      */
     const PASSWORD = 'password';
+
+    /**
+     * @var string
+     */
+    const RADIO = 'radio';
 
     /**
      * @var string
