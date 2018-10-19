@@ -1,0 +1,37 @@
+{
+    "name": "joncasas/html",
+    "description": "Html helper class",
+    "type": "project",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Jonathan Casas",
+            "email": "joncasasq@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.1.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Joncasas\\": "src/Joncasas/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Joncasas\\Html\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Joncasas\\Html\\HtmlServiceProvider",
+                "Joncasas\\Html\\ViewServiceProvider"
+            ]
+        }
+    }
+}
