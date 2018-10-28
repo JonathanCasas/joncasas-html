@@ -1,6 +1,6 @@
 <div class="form-group">
-    <label for="{{ $id }}" class="control-label">{{ $label }}
-        @if($required)
+    <label for="{{ $id }}" class="control-label">{{ $jhtmlLabel }}
+        @if($jhtmlRequired)
         <span class="text-danger">*</span>
         @endif
     </label>
@@ -10,9 +10,9 @@
         $class = implode(' ', $cssClass);
     }
     @endphp
-    @if(Joncasas\Html\AbstractObjectHtml::TEXT==$type||Joncasas\Html\AbstractObjectHtml::FILE==$type||Joncasas\Html\AbstractObjectHtml::NUMBER==$type||Joncasas\Html\AbstractObjectHtml::EMAIL==$type||Joncasas\Html\AbstractObjectHtml::CHECKBOX==$type)
+    @if(Joncasas\Html\AbstractObjectHtml::TEXT==$jhtmlType||Joncasas\Html\AbstractObjectHtml::FILE==$jhtmlType||Joncasas\Html\AbstractObjectHtml::NUMBER==$jhtmlType||Joncasas\Html\AbstractObjectHtml::EMAIL==$jhtmlType||Joncasas\Html\AbstractObjectHtml::CHECKBOX==$jhtmlType)
         @include('HTML::default')
     @else
-        @include(sprintf('HTML::%s',$type))
+        @include(sprintf('HTML::%s',$jhtmlType))
     @endif
 </div>

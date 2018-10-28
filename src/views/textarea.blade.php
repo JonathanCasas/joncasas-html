@@ -1,5 +1,5 @@
-<textarea class="form-control {{$class}}" 
-          id="{{ $id }}" 
-           placeholder="{{ $placeholder }}"
-          name="{{ $name }}" 
-          @if($required)@ required @endif>{{ $value }}</textarea>
+<textarea class="form-control {{$jhtmlClass}}" 
+          id="{{ $jhtmlId }}" 
+           placeholder="{{ $jhtmlPlaceholder }}"
+          name="{{ $jhtmlName }}" 
+          @if($required)@ required @endif>{{ $jhtmlValue }}</textarea>

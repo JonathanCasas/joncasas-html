@@ -1,8 +1,13 @@
-<select class="form-control {{ $class }}" id="{{ $id }}" name="{{ $name }}{{ $multiple?'[]':'' }}"
-        @if($required) required @endif 
-        @if($multiple) multiple @endif>
-        <option value="">{{ $placeholder }}</option>
-    @foreach($options as $key=> $option)
+<select class="form-control {{ $jhtmlClass }}" id="{{ $jhtmlId }}" name="{{ $jhtmlName }}{{ $jhtmlMultiple?'[]':'' }}"
+        @if($jhtmlRequired) required @endif 
+        @if($jhtmlMultiple) multiple @endif>
+        <option value="">{{ $jhtmlPlaceholder }}</option>
+    @foreach($jhtmlOptions as $key=> $option)
+    @if($jhtmlMultiple)
+    <option value="{{ $key }}" @if(in_array($key, $jhtmlValue)) selected @endif>{{ $option }}</option>
+    @else
     <option value="{{ $key }}" @if($value==$key) selected @endif>{{ $option }}</option>
+    @endif
+    
     @endforeach
 </select>

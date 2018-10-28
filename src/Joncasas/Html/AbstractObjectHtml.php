@@ -158,17 +158,17 @@ abstract class AbstractObjectHtml {
             $view = 'HTML::inline';
         }
         $html = view($view)
-                ->with('checked', $this->checked)
-                ->with('name', $this->name)
-                ->with('id', $this->id)
-                ->with('cssClass', $this->cssClass)
-                ->with('label', $this->label)
-                ->with('value', $this->value)
-                ->with('required', $this->required)
-                ->with('placeholder', $this->placeholder)
-                ->with('options', $this->options)
-                ->with('multiple', $this->multiple)
-                ->with('type', $this->type)
+                ->with('jhtmlChecked', $this->checked)
+                ->with('jhtmlName', $this->name)
+                ->with('jhtmlId', $this->id)
+                ->with('jhtmlCssClass', $this->cssClass)
+                ->with('jhtmlLabel', $this->label)
+                ->with('jhtmlValue', $this->value)
+                ->with('jhtmlRequired', $this->required)
+                ->with('jhtmlPlaceholder', $this->placeholder)
+                ->with('jhtmlOptions', $this->options)
+                ->with('jhtmlMultiple', $this->multiple)
+                ->with('jhtmlType', $this->type)
                 ->render();
         $htmlString = new HtmlString($html);
         return $htmlString->toHtml();

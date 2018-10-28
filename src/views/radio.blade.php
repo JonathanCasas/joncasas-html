@@ -1,6 +1,6 @@
-@foreach($options as $key => $value)
-<input type="radio" name="{{ $name }}" id="{{ $id.$key }}" class="{{ $class }}" value="{{ $key }}"
+@foreach($jhtmlOptions as $key => $value)
+<input type="radio" name="{{ $jhtmlName }}" id="{{ $jhtmlId.$key }}" class="{{ $jhtmlClass }}" value="{{ $key }}"
        @if($value==$key) selected @endif
        @if($required) required @endif>
-       <label for="{{ $id.$key }}">{{ $value }}</label><br>
+       <label for="{{ $jhtmlId.$key }}">{{ $value }}</label><br>
 @endforeach

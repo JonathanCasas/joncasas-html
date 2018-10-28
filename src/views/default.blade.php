@@ -1,7 +1,7 @@
-<input type="{{ $type }}" 
-       class="form-control {{ $class }}" 
-       id="{{ $id }}" 
-       name="{{ $name }}" 
-       value="{{ $value }}" 
-       placeholder="{{ $placeholder }}"
-       @if($required) required @endif >
+<input type="{{ $jhtmlType }}" 
+       class="form-control {{ $jhtmlClass }}" 
+       id="{{ $jhtmlId }}" 
+       name="{{ $jhtmlName }}" 
+       value="{{ $jhtmlValue }}" 
+       placeholder="{{ $jhtmlPlaceholder }}"
+       @if($jhtmlRequired) required @endif >
