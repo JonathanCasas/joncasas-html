@@ -6,7 +6,7 @@
     </label>
     @php
     $class = '';
-    if (is_array($cssClass) && count($cssClass) > 0) {
+    if (is_array($jhtmlCssClass) && count($cssClass) > 0) {
         $class = implode(' ', $cssClass);
     }
     @endphp
