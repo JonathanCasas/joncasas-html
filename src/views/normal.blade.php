@@ -1,5 +1,5 @@
 <div class="form-group">
-    <label for="{{ $id }}" class="control-label">{{ $jhtmlLabel }}
+    <label for="{{ $jhtmlId }}" class="control-label">{{ $jhtmlLabel }}
         @if($jhtmlRequired)
         <span class="text-danger">*</span>
         @endif
