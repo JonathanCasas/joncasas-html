@@ -6,7 +6,7 @@
     @if($jhtmlMultiple)
     <option value="{{ $key }}" @if(in_array($key, $jhtmlValue)) selected @endif>{{ $option }}</option>
     @else
-    <option value="{{ $key }}" @if($value==$key) selected @endif>{{ $option }}</option>
+    <option value="{{ $key }}" @if($jhtmlValue==$key) selected @endif>{{ $option }}</option>
     @endif
     
     @endforeach

@@ -1,4 +1,5 @@
 <input type="{{ $jhtmlType }}" 
+	   @if($jhtmlMultiple) multiple="true" @endif 
        class="form-control {{ $jhtmlClass }}" 
        id="{{ $jhtmlId }}" 
        name="{{ $jhtmlName }}" 

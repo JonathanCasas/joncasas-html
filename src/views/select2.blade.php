@@ -4,8 +4,10 @@
     @if(!is_null($jhtmlValue)&&!$jhtmlMultiple)
     <option value="{{ $jhtmlValue['id'] }}" selected="">{{ $jhtmlValue['text'] }}</option>
     @else
-    @foreach($jthmlValue as $value)
+    @if(is_array($jhtmlValue))
+    @foreach($jhtmlValue as $value)
     <option value="{{ $value['id'] }}" selected="">{{ $value['text'] }}</option>
     @endforeach
+    @endif
     @endif
 </select>

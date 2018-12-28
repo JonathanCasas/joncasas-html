@@ -2,4 +2,4 @@
           id="{{ $jhtmlId }}" 
            placeholder="{{ $jhtmlPlaceholder }}"
           name="{{ $jhtmlName }}" 
-          @if($required)@ required @endif>{{ $jhtmlValue }}</textarea>
+          @if($jhtmlRequired)@ required @endif>{{ $jhtmlValue }}</textarea>
