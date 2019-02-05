@@ -128,6 +128,11 @@ abstract class AbstractObjectHtml {
     private $multiple = false;
 
     /**
+     * @var boolean
+     */
+    private $enable = true;
+
+    /**
      * @param bool $inline
      * @param string $type
      * @param string $name
@@ -169,6 +174,7 @@ abstract class AbstractObjectHtml {
                 ->with('jhtmlOptions', $this->options)
                 ->with('jhtmlMultiple', $this->multiple)
                 ->with('jhtmlType', $this->type)
+                ->with('jhtmlEnable', $this->enable)
                 ->render();
         $htmlString = new HtmlString($html);
         return $htmlString->toHtml();
@@ -279,6 +285,15 @@ abstract class AbstractObjectHtml {
 
     public function setMultiple($multiple) {
         $this->multiple = $multiple;
+        return $this;
+    }
+
+    public function getEnable() {
+        return $this->enable;
+    }
+
+    public function setEnable(bool $enable) {
+        $this->enable = $enable;
         return $this;
     }
 

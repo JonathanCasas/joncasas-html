@@ -8,6 +8,5 @@
     @else
     <option value="{{ $key }}" @if($jhtmlValue==$key) selected @endif>{{ $option }}</option>
     @endif
-    
     @endforeach
 </select>
